@@ -4,11 +4,11 @@ const navItems = {
   '/': {
     name: 'home'
   },
-  '/blog': {
-    name: 'blog'
+  'https://www.linkedin.com/in/devon-mcgrath-17462558/': {
+    name: 'linkedin'
   },
-  'https://vercel.com/templates/next.js/portfolio-starter-kit': {
-    name: 'deploy'
+  'https://github.com/Devon-McGrath-github': {
+    name: 'github'
   }
 }
 
