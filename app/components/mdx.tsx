@@ -1,13 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import { highlight } from 'sugar-high'
+import {MDXRemote} from 'next-mdx-remote/rsc'
+import {highlight} from 'sugar-high'
 import React from 'react'
 
-function Table({ data }) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ))
+function Table({data}) {
+  let headers = data.headers.map((header, index) => <th key={index}>{header}</th>)
   let rows = data.rows.map((row, index) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
@@ -41,16 +39,16 @@ function CustomLink(props) {
     return <a {...props} />
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />
+  return <a target='_blank' rel='noopener noreferrer' {...props} />
 }
 
 function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />
+  return <Image alt={props.alt} className='rounded-lg' {...props} />
 }
 
-function Code({ children, ...props }) {
+function Code({children, ...props}) {
   let codeHTML = highlight(children)
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
+  return <code dangerouslySetInnerHTML={{__html: codeHTML}} {...props} />
 }
 
 function slugify(str) {
@@ -65,17 +63,17 @@ function slugify(str) {
 }
 
 function createHeading(level) {
-  const Heading = ({ children }) => {
+  const Heading = ({children}) => {
     let slug = slugify(children)
     return React.createElement(
       `h${level}`,
-      { id: slug },
+      {id: slug},
       [
         React.createElement('a', {
           href: `#${slug}`,
           key: `link-${slug}`,
-          className: 'anchor',
-        }),
+          className: 'anchor'
+        })
       ],
       children
     )
@@ -96,14 +94,9 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
-  Table,
+  Table
 }
 
 export function CustomMDX(props) {
-  return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
-  )
+  return <MDXRemote {...props} components={{...components, ...(props.components || {})}} />
 }
