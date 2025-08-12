@@ -11,7 +11,7 @@ export function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({params}): { title: string; description: string; openGraph: { title: string; description: string; type: string; publishedTime: string; url: string; images: { url: string }[] }; twitter: { card: string; title: string; description: string; images: string[] } } | undefined {
+export function generateMetadata({params}: {params: {slug: string}}) {
   const post = getBlogPosts().find((post) => post.slug === params.slug)
   if (!post) {
     return
@@ -44,7 +44,7 @@ export function generateMetadata({params}): { title: string; description: string
   }
 }
 
-export default function Blog({params}) {
+export default function Blog({params}: {params: {slug: string}}) {
   const post = getBlogPosts().find((post) => post.slug === params.slug)
 
   if (!post) {
