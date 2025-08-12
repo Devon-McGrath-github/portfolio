@@ -5,8 +5,6 @@ export const metadata = {
   description: 'Read my blog.'
 }
 
-let test = 'test'
-
 export default function Page() {
   return (
     <section>

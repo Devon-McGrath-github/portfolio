@@ -14,7 +14,18 @@ const __dirname = dirname(__filename)
 export default [
   // Ignore build output and config files
   {
-    ignores: ['eslint.config.*', '.next/**', 'node_modules/**', 'dist/**', 'out/**']
+    ignores: [
+      'eslint.config.*',
+      'postcss.config.*',
+      'tailwind.config.*',
+      'next.config.*',
+      'next-env.d.ts',
+      'tsconfig.*',
+      '.next/**',
+      'node_modules/**',
+      'dist/**',
+      'out/**'
+    ]
   },
 
   // Base JS rules
