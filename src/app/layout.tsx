@@ -2,19 +2,19 @@ import type {Metadata} from 'next'
 import {Geist, Geist_Mono} from 'next/font/google'
 import 'styles/globals.css'
 
-const geistSans = Geist({
+const primaryFont = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin']
 })
 
-const geistMono = Geist_Mono({
+const fallbackFont = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin']
 })
 
 export const metadata: Metadata = {
   title: 'Devon McGrath',
-  description: 'Devon McGrath Portfolio'
+  description: 'Devon Alexander McGrath Portfolio'
 }
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${primaryFont.variable} ${fallbackFont.variable} antialiased`}>{children}</body>
     </html>
   )
 }
