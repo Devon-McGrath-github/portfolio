@@ -6,11 +6,27 @@ export default function Home() {
       <main className='flex flex-col gap-[32px] row-start-2 items-center sm:items-start'>
         <div className='flex flex-col gap-[16px] items-center sm:items-start'>
           <h1 className='text-4xl font-bold'>Welcome to My Page</h1>
-          <p className='text-lg text-gray-700'>This is a simple Next.js application.</p>
           <Button className='bg-blue-500 text-white hover:bg-blue-600'>Click Me</Button>
         </div>
       </main>
-      <footer className='row-start-3 flex gap-[24px] flex-wrap items-center justify-center'></footer>
+      <footer className='row-start-3 flex gap-[24px] flex-wrap items-center justify-center'>
+        <a
+          href='https://www.linkedin.com/in/devon-mcgrath-17462558/'
+          target='_blank'
+          rel='noreferrer'
+          className='underline hover:text-blue-500'
+        >
+          LinkedIn
+        </a>
+        <a
+          href='https://github.com/Devon-McGrath-github'
+          target='_blank'
+          rel='noreferrer'
+          className='underline hover:text-blue-500'
+        >
+          GitHub
+        </a>
+      </footer>
     </div>
   )
 }
