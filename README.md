@@ -1,7 +1,7 @@
 # devonmcgrath.io — Portfolio
 
 This is the source code for my personal portfolio website.
-[View it here](http://devonmcgrath.io/) or at the [fallback URL](devonsportfolio.netlify.app)
+[View it here](https://devonmcgrath.io/) or at the [fallback URL](https://devonsportfolio.netlify.app/)
 
 Built to showcase my projects, experience, and technical work as a frontend developer.
 
