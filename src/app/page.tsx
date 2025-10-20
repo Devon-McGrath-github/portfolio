@@ -1,22 +1,12 @@
-import {Button} from 'app/components/ui/button'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
+import Main from './Main/Main'
 
 export default function Home() {
   return (
-    <div className='font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20'>
+    <div className=" grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <Header />
-      <main className='flex flex-col gap-[32px] row-start-2 items-center sm:items-start'>
-        <div className='flex flex-col gap-[16px] items-center sm:items-start'>
-          <h1 className='text-4xl font-bold'>Welcome to My Page</h1>
-          <p className='max-w-[600px] text-center sm:text-left'>
-            This is a sample portfolio page built with Next.js and Tailwind CSS.
-          </p>
-        </div>
-        <div className='flex gap-[16px]'>
-          <Button className='bg-blue-500 text-white hover:bg-blue-600'>Click Me</Button>
-        </div>
-      </main>
+      <Main />
       <Footer />
     </div>
   )
