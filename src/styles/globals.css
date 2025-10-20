@@ -120,16 +120,27 @@
     }
   }
   .animate-blink {
-    animation: caret-blink 1s steps(2, start) infinite;
+    animation: caret-blink 1.1s steps(2, start) infinite;
   }
 }
 
 @layer base {
+  /* predictable sizing model */
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* remove default link styles */
+  a {
+    @apply text-inherit no-underline;
   }
 }
 

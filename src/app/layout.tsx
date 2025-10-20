@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sansFont.variable} ${monoFont.variable} ${displayFont.variable}`}>
-      <body className="font-mono antialiased">{children}</body>
+      <body className="font-mono">{children}</body>
     </html>
   )
 }
