@@ -6,5 +6,5 @@ type MainProps = {
 }
 
 export default function Main({ children, className }: MainProps) {
-  return <main className={cn('mx-auto max-w-4xl px-4 py-8', className)}>{children}</main>
+  return <main className={cn('', className)}>{children}</main>
 }
