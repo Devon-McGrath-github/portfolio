@@ -1,6 +1,9 @@
+import 'styles/globals.css'
+
+import GoogleAnalytics from './ga/GoogleAnalytics'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Inter } from 'next/font/google'
-import 'styles/globals.css'
+import RouteChangeTracker from './ga/RouteChangeTracker'
 
 const sansFont = Geist({
   variable: '--font-geist-sans',
@@ -30,7 +33,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sansFont.variable} ${monoFont.variable} ${displayFont.variable}`}>
-      <body className="font-mono">{children}</body>
+      <body className="font-mono">
+        {children}
+
+        {/* Loads GA script + initializes once */}
+        <GoogleAnalytics />
+
+        {/* Tracks SPA navigation changes - Enable after adding multiple pages */}
+        {/* <RouteChangeTracker /> */}
+      </body>
     </html>
   )
 }
