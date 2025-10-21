@@ -1,7 +1,8 @@
+export {}; // ensures this file is a module
+
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
   }
 }
-
-export {}
