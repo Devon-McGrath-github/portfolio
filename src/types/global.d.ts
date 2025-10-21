@@ -4,4 +4,4 @@ declare global {
   }
 }
 
-export {} // required so this file is a module
+export {}
