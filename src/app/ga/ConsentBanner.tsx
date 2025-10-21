@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from 'app/components/ui/button'
+import { Alert, AlertDescription, AlertTitle } from 'app/components/ui/alert'
 import { useEffect, useState } from 'react'
 
 const KEY = 'consent.choice.v1' // change if you need to invalidate old choices
@@ -84,27 +85,32 @@ export default function ConsentBanner() {
   if (!mounted) return null
 
   return (
-    <div
+    <Alert
+      role="region"
+      aria-label="Cookie preferences"
+      aria-live="polite"
+      variant="default"
       className={[
         // positioning & look
-        'fixed inset-x-0 bottom-0 z-50 p-4 md:p-6 bg-primary/80 text-white backdrop-blur border-t',
+        'fixed inset-x-0 sm:inset-x-auto bottom-2 sm:bottom-4 sm:left-4 z-50 bg-primary/80 text-white backdrop-blur border-t flex flex-col gap-4 w-[90vw] max-w-sm mx-auto',
         // animation
         'transition-all duration-500 ease-out',
         // start off-screen then slide up when `shown` is true
         shown ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0',
       ].join(' ')}
     >
-      <div className="mx-auto max-w-3xl flex flex-col md:flex-row md:items-center gap-4">
-        <p className="text-sm leading-5">I use cookies to analyze traffic. Choose your preference:</p>
-        <div className="ml-auto flex gap-2">
-          <Button onClick={rejectAll} variant="default" className="font-medium">
-            Reject
-          </Button>
-          <Button onClick={acceptAnalyticsOnly} variant="secondary" className="font-medium">
-            Allow analytics
-          </Button>
-        </div>
+      <AlertDescription className="text-white">
+        I use cookies to analyze traffic. You may opt in or out of these:
+      </AlertDescription>
+
+      <div className="ml-auto flex gap-2 justify-end">
+        <Button onClick={rejectAll} variant="default" className="font-medium">
+          Reject
+        </Button>
+        <Button onClick={acceptAnalyticsOnly} variant="secondary" className="font-medium">
+          Allow analytics
+        </Button>
       </div>
-    </div>
+    </Alert>
   )
 }
