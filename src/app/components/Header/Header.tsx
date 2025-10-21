@@ -12,7 +12,10 @@ export default function Header() {
         <span className="block">Devon</span>
         <span className="block">Alexander</span>
         <span className="block">
-          McGrath<span className="animate-blink text-destructive">.</span>
+          McGrath
+          <span className="animate-blink motion-reduce:animate-none text-destructive" aria-hidden="true">
+            .
+          </span>
         </span>
       </h1>
     </header>
