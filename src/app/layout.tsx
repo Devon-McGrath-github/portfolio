@@ -2,9 +2,9 @@ import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
-import GoogleAnalytics from './ga/GoogleAnalytics'
-import ConsentBanner from './ga/ConsentBanner'
-import { CONSENT_REGIONS } from './ga/ConsentRegions'
+import GoogleAnalytics from './components/ga/GoogleAnalytics'
+import ConsentBanner from './components/ga/ConsentBanner'
+import { CONSENT_REGIONS } from './components/ga/ConsentRegions'
 // import RouteChangeTracker from './ga/RouteChangeTracker'
 
 import 'styles/globals.css'
