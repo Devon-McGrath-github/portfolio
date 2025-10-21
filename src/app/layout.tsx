@@ -3,7 +3,7 @@ import 'styles/globals.css'
 import GoogleAnalytics from './ga/GoogleAnalytics'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Inter } from 'next/font/google'
-import RouteChangeTracker from './ga/RouteChangeTracker'
+// import RouteChangeTracker from './ga/RouteChangeTracker' 
 
 const sansFont = Geist({
   variable: '--font-geist-sans',
