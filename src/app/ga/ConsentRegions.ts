@@ -31,4 +31,6 @@ export const CONSENT_REGIONS = [
   'NO',
   'GB',
   'CH',
-]
+] as const
+
+export type ConsentRegion = (typeof CONSENT_REGIONS)[number]
