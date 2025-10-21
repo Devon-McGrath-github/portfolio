@@ -14,6 +14,7 @@ export default function Header() {
         <span className="block">
           McGrath
           <span
+            role="presentation"
             aria-hidden="true"
             className="
               relative
@@ -23,7 +24,7 @@ export default function Header() {
               after:w-[0.28em] after:h-[0.28em]
               after:rounded-full
               after:bg-destructive
-              after:ml-[0.12em]
+              after:ml-[0.04em]
               after:align-baseline
               after:translate-y-[0.0em]            
               after:animate-blink
