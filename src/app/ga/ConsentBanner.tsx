@@ -20,7 +20,6 @@ export default function ConsentBanner() {
     // If there is a stored choice, apply it on mount
     try {
       const choice = JSON.parse(stored)
-      // @ts-expect-error
       window.gtag?.('consent', 'update', choice)
     } catch {}
   }, [])
@@ -38,11 +37,9 @@ export default function ConsentBanner() {
   //     analytics_storage: 'granted',
   //   }
   //   localStorage.setItem(KEY, JSON.stringify(choice))
-  //   // @ts-expect-error
   //   window.gtag?.('consent', 'update', choice)
 
   //   // Optional immediate page_view
-  //   // @ts-expect-error
   //   window.gtag?.('event', 'page_view', {
   //     page_title: document.title,
   //     page_location: window.location.href,
@@ -60,7 +57,6 @@ export default function ConsentBanner() {
       analytics_storage: 'denied',
     }
     localStorage.setItem(KEY, JSON.stringify(choice))
-    // @ts-expect-error
     window.gtag?.('consent', 'update', choice)
     slideOutAndUnmount()
   }
@@ -73,11 +69,9 @@ export default function ConsentBanner() {
       analytics_storage: 'granted',
     }
     localStorage.setItem(KEY, JSON.stringify(choice))
-    // @ts-expect-error
     window.gtag?.('consent', 'update', choice)
 
     // immediate page_view information
-    // @ts-expect-error
     window.gtag?.('event', 'page_view', {
       page_title: document.title,
       page_location: window.location.href,

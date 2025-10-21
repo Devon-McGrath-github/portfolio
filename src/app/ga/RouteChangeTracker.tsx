@@ -14,7 +14,6 @@ export default function RouteChangeTracker() {
     const url = pathname + (searchParams?.toString() ? `?${searchParams}` : '')
     // Send a GA4 page_view
     // gtag('event', 'page_view', {...}) is optional; GA4 also respects 'config' with page_path
-    // @ts-expect-error
     window.gtag?.('event', 'page_view', {
       page_title: document.title,
       page_location: window.location.href,
