@@ -7,7 +7,7 @@ export default function HomeNav() {
       <ul className="flex flex-wrap items-center justify-center gap-6">
         <li>
           <a
-            href={`https://github.com/${SITE.socials.linkedin}`}
+            href={`https://www.linkedin.com/in/${SITE.socials.linkedin}`}
             target="_blank"
             rel="noreferrer"
             className="underline hover:text-destructive"
