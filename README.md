@@ -21,6 +21,19 @@ Built to showcase my projects, experience, and technical work as a frontend deve
 - Clean compartmentalised components (Header / Main / Footer)
 - Optimised for long-lived maintainability and iteration
 
+## Performance & Accessibility
+
+The site is built with attention to both runtime performance and inclusive, accessible delivery. Below are the latest Lighthouse scores from the production build:
+
+![Lighthouse scores](./assets/lighthouse.png)
+
+Key considerations:
+
+- Deferring or gating third-party scripts (ads, analytics) to preserve LCP/FID
+- Using semantic HTML and ARIA only where needed (no “div soup”)
+- Preserving keyboard navigation and focus states across interactive elements
+- Ensuring sufficient contrast ratios and robust dark/light color choices
+
 ## Development
 
 ```bash
