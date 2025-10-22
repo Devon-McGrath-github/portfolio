@@ -16,6 +16,7 @@ export default function HomeNav() {
             <span>LinkedIn</span>
           </a>
         </li>
+
         <li>
           <a
             href={`https://github.com/${SITE.socials.github}`}
@@ -27,6 +28,7 @@ export default function HomeNav() {
             <span>GitHub</span>
           </a>
         </li>
+        
         <li>
           <a href={`mailto:${SITE.email}`} className="underline hover:text-destructive">
             <Mail aria-hidden="true" focusable="false" className="inline-block mr-2 mb-1" size={16} />
