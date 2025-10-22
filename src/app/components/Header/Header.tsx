@@ -13,7 +13,7 @@ export default function Header() {
         <span className="block">Alexander</span>
         <span className="block">
           McGrath
-          {/* <span
+          <span
             role="presentation"
             aria-hidden="true"
             className="
@@ -30,7 +30,7 @@ export default function Header() {
               after:animate-blink
               motion-reduce:after:animate-none
             "
-          /> */}
+          />
         </span>
       </h1>
     </header>
