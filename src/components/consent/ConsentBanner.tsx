@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@/styles/components/ui/button'
-import { Alert, AlertDescription } from '@/styles/components/ui/alert'
+import { Button } from '@/components/ui/button'
+import { Alert, AlertDescription } from '@/components/ui/alert'
 import { useEffect, useState } from 'react'
 
 const KEY = 'consent.choice.v1' // change if you need to invalidate old choices

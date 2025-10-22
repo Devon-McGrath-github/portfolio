@@ -1,4 +1,4 @@
-export default function Header() {
+export default function HomeHeader() {
   return (
     <header className="w-full flex justify-start">
       <h1

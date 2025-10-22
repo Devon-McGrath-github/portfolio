@@ -1,12 +1,13 @@
+import { SITE } from 'config/site'
 import { Mail, Github, Linkedin } from 'lucide-react'
 
-export default function Footer() {
+export default function HomeNav() {
   return (
     <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
       <ul className="flex flex-wrap items-center justify-center gap-6">
         <li>
           <a
-            href="https://www.linkedin.com/in/devon-mcgrath-17462558/"
+            href={`https://github.com/${SITE.socials.linkedin}`}
             target="_blank"
             rel="noreferrer"
             className="underline hover:text-destructive"
@@ -17,7 +18,7 @@ export default function Footer() {
         </li>
         <li>
           <a
-            href="https://github.com/Devon-McGrath-github"
+            href={`https://github.com/${SITE.socials.github}`}
             target="_blank"
             rel="noreferrer"
             className="underline hover:text-destructive"
@@ -27,7 +28,7 @@ export default function Footer() {
           </a>
         </li>
         <li>
-          <a href="mailto:devon.mcgrath@gmail.com" className="underline hover:text-destructive">
+          <a href={`mailto:${SITE.email}`} className="underline hover:text-destructive">
             <Mail aria-hidden="true" focusable="false" className="inline-block mr-2 mb-1" size={16} />
             <span>Email</span>
           </a>

@@ -1,6 +1,5 @@
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import Main from './components/Main/Main'
+import HomeHeader from '@/components/home-page/HomeHeader'
+import HomeNav from '@/components/home-page/HomeNav'
 
 export default function Home() {
   return (
@@ -8,21 +7,17 @@ export default function Home() {
       {/* Header */}
       <div className="w-full">
         <div className="mx-auto max-w-[min(92vw,3200px)]  py-6">
-          <Header />
+          <HomeHeader />
         </div>
       </div>
 
-      {/* Main (a bit wider than header/footer) */}
-      <div className="w-full">
-        <div className="mx-auto max-w-[min(92vw,3200px)] px-[clamp(16px,4vw,80px)] py-6">
-          <Main />
-        </div>
-      </div>
+      {/* Main */}
+      <div className="w-full"></div>
 
       {/* Footer */}
       <div className="w-full">
         <div className="mx-auto max-w-[min(92vw,3200px)] px-[clamp(16px,4vw,80px)] py-8">
-          <Footer />
+          <HomeNav />
         </div>
       </div>
     </div>

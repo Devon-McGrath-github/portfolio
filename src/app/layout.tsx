@@ -2,9 +2,11 @@ import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
-import GoogleAnalytics from './components/ga/GoogleAnalytics'
-import ConsentBanner from './components/ga/ConsentBanner'
-import { CONSENT_REGIONS } from './components/ga/ConsentRegions'
+import { SITE } from '@/config/site'
+
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
+import ConsentBanner from '../components/consent/ConsentBanner'
+import { CONSENT_REGIONS } from '../constants/consentRegions'
 // import RouteChangeTracker from './ga/RouteChangeTracker'
 
 import 'styles/globals.css'
@@ -27,8 +29,8 @@ const displayFont = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Devon McGrath',
-  description: 'Devon Alexander McGrath Portfolio',
+  title: `${SITE.name}`,
+  description: `${SITE.description}`,
 }
 
 export default async function RootLayout({
