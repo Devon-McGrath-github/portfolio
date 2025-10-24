@@ -28,7 +28,6 @@ export default function HomeHeader() {
               after:align-baseline
               after:translate-y-[0.0em]            
               after:animate-blink
-              motion-reduce:after:animate-none
             "
           />
         </span>

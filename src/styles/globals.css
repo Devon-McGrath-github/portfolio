@@ -126,6 +126,24 @@
   .animate-blink {
     animation: caret-blink 1.1s steps(2, start) infinite;
   }
+
+  @keyframes slide {
+    from {
+      transform: translateY(12px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  /* Respect user “reduce motion” */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-slide,
+    .animate-blink {
+      animation: none;
+    }
+  }
 }
 
 @layer base {
