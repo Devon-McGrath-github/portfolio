@@ -14,15 +14,17 @@ type ProjectProps = Omit<ProjectItem, 'id'>
 
 export default function Project({ title, description, imageUrl, altText, projectUrl }: ProjectProps) {
   return (
-    <div className="m-[1vw] overflow-hidden relative h-[100vh] bg-amber-200">
+    <div className="m-[1vw] overflow-hidden relative h-[100vh]">
       <a href={projectUrl} className="block relative w-full h-full">
         <ParallaxSection speed={0.5} className="">
           <Image src={imageUrl} alt={altText} className="object-cover" sizes="100vw" fill />
         </ParallaxSection>
 
         <div className="text-white absolute inset-0 z-[11] flex flex-col justify-end items-start w-1/2 mb-[4vw] ml-[5vw] pb-0 pl-0">
-          <h2 className="">{title}</h2>
-          <p className="">{description}</p>
+          <h2 className="mb-[1vw]">{title}</h2>
+          <div>
+            <p className="ml-[0.6vw] text-[1.1rem]">{description}</p>
+          </div>
         </div>
       </a>
     </div>

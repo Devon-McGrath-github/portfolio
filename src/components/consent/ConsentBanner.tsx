@@ -92,7 +92,7 @@ export default function ConsentBanner() {
       variant="default"
       className={[
         // positioning & look
-        'font-mono fixed inset-x-0 sm:inset-x-auto bottom-2 sm:bottom-4 sm:left-4 z-50 text-white backdrop-blur border-t flex flex-col gap-4 w-[90vw] max-w-sm mx-auto',
+        'border-none font-mono fixed inset-x-0 sm:inset-x-auto bottom-2 sm:bottom-[2vw] sm:left-[2vw] z-50 text-white backdrop-blur border-t flex flex-col gap-4 w-[90vw] max-w-sm mx-auto',
         // animation
         'transition-all duration-500 ease-out',
         // start off-screen then slide up when `shown` is true
