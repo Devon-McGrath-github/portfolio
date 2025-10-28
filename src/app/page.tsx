@@ -1,5 +1,6 @@
 import HomeHeader from '@/components/home-page/HomeHeader'
 import HomeNav from '@/components/home-page/HomeNav'
+import Project from '@/components/projects/Project'
 
 export default function Home() {
   return (
@@ -20,6 +21,10 @@ export default function Home() {
           <HomeNav />
         </div>
       </div>
+
+      <section className="w-full">
+        <Project />
+      </section>
     </div>
   )
 }
