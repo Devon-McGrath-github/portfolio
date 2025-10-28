@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin } from 'lucide-react'
 
 export default function HomeNav() {
   return (
-    <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+    <nav className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
       <ul className="flex flex-wrap items-center justify-center gap-6">
         <li>
           <a
@@ -28,7 +28,7 @@ export default function HomeNav() {
             <span>GitHub</span>
           </a>
         </li>
-        
+
         <li>
           <a href={`mailto:${SITE.email}`} className="underline hover:text-destructive">
             <Mail aria-hidden="true" focusable="false" className="inline-block mr-2 mb-1" size={16} />
@@ -36,6 +36,6 @@ export default function HomeNav() {
           </a>
         </li>
       </ul>
-    </footer>
+    </nav>
   )
 }
