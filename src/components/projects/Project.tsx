@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
+import { ParallaxSection } from './parralax'
 
 export type ProjectItem = {
   id: string
@@ -14,16 +15,19 @@ type ProjectProps = Omit<ProjectItem, 'id'>
 
 export default function Project({ title, description, imageUrl, altText, projectUrl }: ProjectProps) {
   return (
-    <div className="m-[1vw]">
-      <a href={projectUrl} className='h-[100vh]'>
-        <div className="text-white">
+    <div className="m-[1vw] overflow-hidden relative h-[100vh] bg-amber-200">
+      {/* <a href={projectUrl} className=""> */}
+        <ParallaxSection speed={0.5}>
+          <AspectRatio ratio={16 / 9} className="w-full h-full relative">
+            <Image src={imageUrl} alt={altText} className="object-cover" fill={true} />
+          </AspectRatio>
+        </ParallaxSection>
+
+        <div className="text-white absolute inset-0 z-[11] flex flex-col justify-end items-start w-1/2 mb-[4vw] ml-[5vw] pb-0 pl-0">
           <h2 className="">{title}</h2>
           <p className="">{description}</p>
         </div>
-        {/* <AspectRatio ratio={16 / 9} className="position-absolute">
-          <Image src={imageUrl} alt={altText} className="object-cover" fill={true} />
-        </AspectRatio> */}
-      </a>
+      {/* </a> */}
     </div>
   )
 }

@@ -7,7 +7,7 @@ const projects: ProjectItem[] = [
     id: 'clean-co',
     title: 'Clean Collective',
     description:
-      'A platform connecting eco-conscious consumers with sustainable brands, promoting environmentally friendly products and practices.',
+      'Led the design and development of the Clean Collective brand website, showcasing their eco-friendly, health-conscious ready-to-drink cocktails.',
     imageUrl: '/projects/cleanco-home.png',
     altText: 'Clean Collective Homepage',
     // projectUrl: 'https://cleanco.io',
@@ -16,7 +16,7 @@ const projects: ProjectItem[] = [
     id: 'rinse-vodka',
     title: 'Rinse Vodka',
     description:
-      'A premium vodka brand that emphasizes purity and smoothness, crafted using a unique filtration process for an exceptional drinking experience.',
+      'Designed and built the marketing site for Rinse Vodka Soda, a New Zealand beverage brand. Implemented a clean, performance-focused React build highlighting the product’s key selling points — low sugar, natural ingredients, and real fruit juice.',
     imageUrl: '/projects/rinse-home.png',
     altText: 'Rinse Vodka Homepage',
     // projectUrl: 'https://rinsevodka.com',

@@ -25,7 +25,6 @@ const monoFont = Geist_Mono({
 const displayFont = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
-  weight: '900',
 })
 
 export const metadata: Metadata = {
@@ -54,7 +53,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${sansFont.variable} ${monoFont.variable} ${displayFont.variable}`}>
-      <body className="font-mono">
+      <body>
         {/* --- Consent defaults only for GDPR-style regions --- */}
         <Script id="consent-defaults" strategy="beforeInteractive">
           {`

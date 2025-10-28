@@ -4,7 +4,7 @@ import { Mail, Github, Linkedin } from 'lucide-react'
 export default function HomeNav() {
   return (
     <nav className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-      <ul className="flex flex-wrap items-center justify-center gap-6">
+      <ul className="flex flex-wrap items-center justify-center gap-6 font-mono">
         <li>
           <a
             href={`https://www.linkedin.com/in/${SITE.socials.linkedin}`}
