@@ -1,14 +1,6 @@
 import Image from 'next/image'
-import { ParallaxSection } from './parralax'
-
-export type ProjectItem = {
-  id: string
-  title: string
-  description: string
-  imageUrl: string
-  altText: string
-  projectUrl?: string
-}
+import { ParallaxSection } from './Parralax'
+import { ProjectItem } from '@/data/projects'
 
 type ProjectProps = Omit<ProjectItem, 'id'>
 

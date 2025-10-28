@@ -1,26 +1,8 @@
 import Footer from '@/components/Footer'
 import HomeHeader from '@/components/home-page/HomeHeader'
 import HomeNav from '@/components/home-page/HomeNav'
-import Project, { ProjectItem } from '@/components/projects/Project'
-
-const projects: ProjectItem[] = [
-  {
-    id: 'clean-co',
-    title: 'Clean Collective',
-    description: 'Brand Website',
-    imageUrl: '/projects/cleanco-home.png',
-    altText: 'Clean Collective Homepage',
-    // projectUrl: 'https://cleanco.io',
-  },
-  {
-    id: 'rinse-vodka',
-    title: 'Rinse',
-    description: 'Brand Website',
-    imageUrl: '/projects/rinse-product.jpg',
-    altText: 'Rinse Vodka Homepage',
-    // projectUrl: 'https://rinsevodka.com',
-  },
-]
+import Project from '@/components/projects/Project'
+import { projects } from '@/data/projects'
 
 export default function Home() {
   return (
@@ -42,8 +24,8 @@ export default function Home() {
 
       {/* Projects */}
       <section className="w-full flex flex-col">
-        {projects.map(({ id, ...project }) => (
-          <Project key={id} {...project} />
+        {projects.map(({ id, projectUrl, ...project }) => (
+          <Project key={id} projectUrl={projectUrl ?? `/projects/${id}`} {...project} />
         ))}
       </section>
 

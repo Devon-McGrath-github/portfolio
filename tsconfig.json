@@ -26,6 +26,7 @@
       "@/components/*": ["components/*"],
       "@/constants/*": ["constants/*"],
       "@/config/*": ["config/*"],
+      "@/data/*": ["data/*"],
       "@/hooks/*": ["hooks/*"],
       "@/styles/*": ["styles/*"],
       "@/types/*": ["types/*"],
