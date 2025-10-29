@@ -5,7 +5,7 @@ export default function Header() {
     <header className="w-full flex items-center py-4">
       <Button variant={'ghost'} className="text-3xl font-bold">
         <a href="/">
-          Devon McGrath{' '}
+          Devon McGrath
           <span
             role="presentation"
             aria-hidden="true"
@@ -17,9 +17,9 @@ export default function Header() {
               after:w-[0.28em] after:h-[0.28em]
               after:rounded-full
               after:bg-destructive
-              after:ml-[0.04em]
+              after:ml-[0.08em]
               after:align-baseline
-              after:translate-y-[0.0em]            
+              after:translate-y-[0.05em]            
               after:animate-blink
             "
           />
