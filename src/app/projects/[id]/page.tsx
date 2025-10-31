@@ -31,6 +31,11 @@ export default function ProjectPage({ params }: Props) {
     <main className="mx-auto max-w-5xl px-6 space-y-8">
       <Header />
 
+      <section className="space-y-4">
+        <h1 className="text-4xl font-bold">{project.title}</h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400">{project.description}</p>
+      </section>
+
       <section className="relative aspect-[16/10] overflow-hidden rounded-xl">
         <Image src={project.imageUrl} alt={project.altText} fill sizes="100vw" className="object-cover" priority />
       </section>
