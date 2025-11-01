@@ -11,6 +11,7 @@ import { CONSENT_REGIONS } from '../constants/consentRegions'
 
 import 'styles/globals.css'
 import { Geist, Geist_Mono, Inter } from 'next/font/google'
+import Footer from '@/components/Footer'
 
 const sansFont = Geist({
   variable: '--font-geist-sans',
@@ -83,6 +84,9 @@ export default async function RootLayout({
 
         {/* Show banner only where required */}
         {inConsentRegion && <ConsentBanner />}
+
+        {/* Footer */}
+        <Footer />
       </body>
     </html>
   )

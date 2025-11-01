@@ -22,13 +22,9 @@ export default function Project({ title, textVariant, description, imageUrl, alt
             textColorClass,
           )}
         >
-          <h2 role="presentation" className="mb-[1vw] text-[clamp(2rem,12vw,6.5rem)]">
-            {title}
-          </h2>
+          <h2 className="mb-[1vw] text-[clamp(2rem,12vw,6.5rem)] font-bold">{title}</h2>
           <div>
-            <p role="presentation" className="ml-[0.6vw] text-[1.1rem]">
-              {description}
-            </p>
+            <p className="ml-[0.6vw] text-[1.1rem] font-medium">{description}</p>
           </div>
         </div>
       </Link>

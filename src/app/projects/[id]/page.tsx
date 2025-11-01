@@ -25,31 +25,25 @@ export function generateStaticParams() {
 //   }
 // }
 
-
 export default async function ProjectPage({ params }: { params: Promise<Params> }) {
   const { id } = await params
   const project = projects.find((p) => p.id === id)
   if (!project) notFound()
 
   return (
-    <main className="mx-auto max-w-5xl px-6 space-y-8">
+    <div className="min-h-screen flex flex-col">
       <Header />
 
-      <section className="space-y-4">
-        <h1 className="text-4xl font-bold">{project.title}</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">{project.description}</p>
-      </section>
+      <main className="mx-auto w-full max-w-[680px] px-6 space-y-8 flex-1">
+        <section className="space-y-4">
+          <h1 className="text-4xl font-bold">{project.title}</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400">{project.description}</p>
+        </section>
 
-      <section className="relative aspect-[16/10] overflow-hidden rounded-xl">
-        <Image
-          src={project.imageUrl}
-          alt={project.altText}
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
-      </section>
-    </main>
+        <section className="relative aspect-[16/10] overflow-hidden rounded-xl">
+          <Image src={project.imageUrl} alt={project.altText} fill sizes="100vw" className="object-cover" priority />
+        </section>
+      </main>
+    </div>
   )
 }

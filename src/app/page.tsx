@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer'
 import HomeHeader from '@/components/home-page/HomeHeader'
 import HomeNav from '@/components/home-page/HomeNav'
 import Project from '@/components/projects/Project'
@@ -28,9 +27,6 @@ export default function Home() {
           <Project key={id} projectUrl={projectUrl ?? `/projects/${id}`} {...project} />
         ))}
       </section>
-
-      {/* Footer */}
-      <Footer />
     </div>
   )
 }
