@@ -9,19 +9,20 @@ export function generateStaticParams() {
   return projects.map((p) => ({ id: p.id }))
 }
 
-export async function generateMetadata({ params }: Props) {
-  const project = projects.find((p) => p.id === params.id)
-  if (!project) return {}
-  return {
-    title: `${project.title} — Projects`,
-    description: project.description,
-    openGraph: {
-      title: project.title,
-      description: project.description,
-      images: [{ url: project.imageUrl }],
-    },
-  }
-}
+// * Temporarily disabled metadata generation due to an issue with Next.js
+// export async function generateMetadata({ params }: Props) {
+//   const project = projects.find((p) => p.id === params.id)
+//   if (!project) return {}
+//   return {
+//     title: `${project.title} — Projects`,
+//     description: project.description,
+//     openGraph: {
+//       title: project.title,
+//       description: project.description,
+//       images: [{ url: project.imageUrl }],
+//     },
+//   }
+// }
 
 export default function ProjectPage({ params }: Props) {
   const project = projects.find((p) => p.id === params.id)
