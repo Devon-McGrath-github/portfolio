@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import { ParallaxSection } from './Parralax'
 import { ProjectItem } from '@/data/projects'
+import Link from 'next/link'
 
 type ProjectProps = Omit<ProjectItem, 'id'>
 
 export default function Project({ title, description, imageUrl, altText, projectUrl }: ProjectProps) {
   return (
     <div className="m-[1vw] overflow-hidden relative h-[100vh]">
-      <a href={projectUrl} className="block relative w-full h-full">
+      <Link href={`${projectUrl}`} className="block relative w-full h-full">
         <ParallaxSection speed={0.5} className="">
           <Image src={imageUrl} alt={altText} className="object-cover" sizes="100vw" fill />
         </ParallaxSection>
@@ -18,7 +19,7 @@ export default function Project({ title, description, imageUrl, altText, project
             <p className="ml-[0.6vw] text-[1.1rem]">{description}</p>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }
