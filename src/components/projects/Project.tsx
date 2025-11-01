@@ -13,7 +13,7 @@ export default function Project({ title, description, imageUrl, altText, project
         </ParallaxSection>
 
         <div className="text-white absolute inset-0 z-[11] flex flex-col justify-end items-start w-1/2 mb-[4vw] ml-[5vw] pb-0 pl-0">
-          <h2 className="mb-[1vw]">{title}</h2>
+          <h2 className="mb-[1vw] text-[clamp(2rem,12vw,6.5rem)]">{title}</h2>
           <div>
             <p className="ml-[0.6vw] text-[1.1rem]">{description}</p>
           </div>
