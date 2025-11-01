@@ -1,10 +1,11 @@
+import Link from 'next/link'
 import { Button } from './ui/button'
 
 export default function Header() {
   return (
     <header className="w-full flex items-center py-4">
       <Button variant={'ghost'} className="text-3xl font-bold">
-        <a href="/">
+        <Link href="/">
           Devon McGrath
           <span
             role="presentation"
@@ -23,7 +24,7 @@ export default function Header() {
               after:animate-blink
             "
           />
-        </a>
+        </Link>
       </Button>
     </header>
   )
