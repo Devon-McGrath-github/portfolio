@@ -4,6 +4,8 @@ import Script from 'next/script'
 
 import { SITE } from '@/config/site'
 
+import ParallaxProviders from './providers'
+
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import ConsentBanner from '../components/consent/ConsentBanner'
 import { CONSENT_REGIONS } from '../constants/consentRegions'
@@ -76,11 +78,10 @@ export default async function RootLayout({
           `}
         </Script>
 
-        {children}
+        <ParallaxProviders>{children}</ParallaxProviders>
 
-        {/* GA load + SPA tracking (from your existing setup) */}
+        {/* GA tracking */}
         <GoogleAnalytics />
-        {/* <RouteChangeTracker /> */}
 
         {/* Show banner only where required */}
         {inConsentRegion && <ConsentBanner />}

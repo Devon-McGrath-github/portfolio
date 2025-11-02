@@ -1,6 +1,6 @@
 import HomeHeader from '@/components/home-page/HomeHeader'
 import HomeNav from '@/components/home-page/HomeNav'
-import Project from '@/components/projects/Project'
+import Project from '@/components/Project'
 import { projects } from '@/data/projects'
 
 export default function Home() {

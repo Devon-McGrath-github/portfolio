@@ -1,5 +1,7 @@
+'use client'
+
 import Image from 'next/image'
-import { ParallaxSection } from './Parralax'
+import { Parallax } from 'react-scroll-parallax'
 import { ProjectItem } from '@/data/projects'
 import Link from 'next/link'
 import { cn } from '@/utils/utils'
@@ -12,9 +14,11 @@ export default function Project({ title, textVariant, description, imageUrl, alt
   return (
     <div className={cn('m-[1vw] overflow-hidden relative h-[100vh]', textVariant === 'dark' ? '' : 'bg-black')}>
       <Link href={`${projectUrl}`} className="block relative w-full h-full">
-        <ParallaxSection speed={0.5} className="">
-          <Image src={imageUrl} alt={altText} className="object-cover" sizes="100vw" fill />
-        </ParallaxSection>
+        <Parallax speed={-40} className="h-full w-full">
+          <div className="relative h-full w-full">
+            <Image src={imageUrl} alt={altText} fill className="object-cover" sizes="100vw" priority />
+          </div>
+        </Parallax>
 
         <div
           className={cn(
