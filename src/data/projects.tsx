@@ -21,18 +21,35 @@ export const projects: ProjectItem[] = [
     id: 'rinse-vodka',
     title: 'Rinse',
     description: 'Brand Website',
-    heroText: 'Crafted for purity.',
-    paragraphs: ['test'],
-    imageUrl: '/projects/rinsevodka/rinse-product.jpg',
-    altText: 'Rinse Vodka cans',
+    heroText:
+      'Rinse Vodka Soda is a New Zealand beverage brand built for creativity and fun: crafting clean, refreshing drinks with natural ingredients and a modern streetwear aesthetic. I designed and developed their public-facing website, creating a lightweight, flexible build with custom JavaScript enhancements for interactivity and compliance.',
+    paragraphs: [
+      'One of the core features I implemented was an age verification system, developed from scratch to ensure a seamless user experience while meeting regulatory standards. I also integrated the custom Google Maps store locator I had originally built for Clean Collective, allowing customers to easily find verified Rinse stockists across the country.',
+      'Beyond development, I set up Google Analytics and refined SEO across the site, ensuring every page performed well both in search visibility and user engagement. These insights helped the marketing team understand user behavior, refine campaigns, and make data-informed decisions about content and promotions.',
+      'Visually, the site was designed to feel as clean and uncomplicated as the product itself. I established the layout, typography, and imagery to reflect Rinse’s minimalist branding, collaborating with the creative team to shape photography and content that fit harmoniously within the design system. The result was a sleek, fast, and easily managed website that expressed the brand’s personality while supporting ongoing growth and marketing needs.',
+    ],
+    imageUrl: '/projects/rinsevodka/rinse-product.webp',
+    altText: 'Rinse Vodka product shot',
     images: [
       {
-        url: '/projects/rinsevodka/rinse-prod-1.png',
+        url: '/projects/rinsevodka/rinse-prod-line.webp',
+        altText: 'Rinse Vodka Soda product line',
+      },
+      {
+        url: '/projects/rinsevodka/rinse-home.webp',
+        altText: 'Rinse Vodka Soda website homepage',
+      },
+      {
+        url: '/projects/rinsevodka/rinse-prod-2.webp',
+        altText: 'Rinse Vodka bottles',
+      },
+      {
+        url: '/projects/rinsevodka/rinse-prod-1.webp',
         altText: 'Rinse Vodka hero image',
       },
       {
-        url: '/projects/rinsevodka/rinse-prod-2.png',
-        altText: 'Rinse Vodka bottles',
+        url: '/projects/rinsevodka/rinse-prod-diamond.webp',
+        altText: 'Rinse Vodka Soda diamond product shot',
       },
     ],
   },
@@ -51,9 +68,9 @@ export const projects: ProjectItem[] = [
       'What made this project stand out for me was the interplay between technical precision and brand expression. Every decision — from component structure to typography scale — served the dual purpose of communicating Clean Collective’s ethos and maintaining a high-performance, maintainable codebase.',
       'The result was a fast, modern, and data-driven brand website that clearly articulated Clean Collective’s identity while remaining adaptable for future growth. It was a project that reinforced how thoughtful front-end development and intentional design can work together to tell a brand’s story with clarity and confidence.',
     ],
-    imageUrl: '/projects/cleanco/cleanco-home.jpg',
+    imageUrl: '/projects/cleanco/cleanco-product.jpg',
     textVariant: 'dark',
-    altText: 'Clean Collective cans',
+    altText: 'Clean Collective product shot',
     images: [
       {
         url: '/projects/cleanco/home.png',

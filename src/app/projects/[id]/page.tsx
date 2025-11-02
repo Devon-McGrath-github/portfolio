@@ -59,16 +59,13 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       {/* Project Gallery */}
       <section className="flex flex-col gap-[20px] w-full items-center">
         {project.images?.map((image, index) => (
-          <div
-            key={`${project.id}-image-${index}`}
-            className="relative w-full max-w-[1200px] aspect-[16/10] overflow-hidden"
-          >
+          <div key={`${project.id}-image-${index}`} className="relative w-full max-w-[1200px] overflow-hidden">
             <Image
               src={image.url}
               alt={image.altText}
-              fill
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              className="object-cover"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
               priority={index === 0}
             />
           </div>
