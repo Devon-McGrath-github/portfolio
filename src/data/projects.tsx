@@ -5,8 +5,8 @@ export type ProjectItem = {
   heroText?: string
   paragraphs: string[]
   imageUrl: string
-  textVariant?: string
   altText: string
+  textVariant?: string
   projectUrl?: string
   images?: ImageItem[]
 }
@@ -48,6 +48,10 @@ export const projects: ProjectItem[] = [
         altText: 'Rinse Vodka hero image',
       },
       {
+        url: '/projects/rinsevodka/rinse-website-gallery.webp',
+        altText: 'Rinse Vodka website gallery view',
+      },
+      {
         url: '/projects/rinsevodka/rinse-prod-diamond.webp',
         altText: 'Rinse Vodka Soda diamond product shot',
       },
@@ -68,17 +72,25 @@ export const projects: ProjectItem[] = [
       'What made this project stand out for me was the interplay between technical precision and brand expression. Every decision — from component structure to typography scale — served the dual purpose of communicating Clean Collective’s ethos and maintaining a high-performance, maintainable codebase.',
       'The result was a fast, modern, and data-driven brand website that clearly articulated Clean Collective’s identity while remaining adaptable for future growth. It was a project that reinforced how thoughtful front-end development and intentional design can work together to tell a brand’s story with clarity and confidence.',
     ],
-    imageUrl: '/projects/cleanco/cleanco-product.jpg',
-    textVariant: 'dark',
+    imageUrl: '/projects/cleanco/cleanco-product.webp',
     altText: 'Clean Collective product shot',
+    textVariant: 'dark',
     images: [
       {
-        url: '/projects/cleanco/home.png',
-        altText: 'Clean Collective hero image',
+        url: '/projects/cleanco/cleanco-product-page.webp',
+        altText: 'Clean Collective product page',
       },
       {
-        url: '/projects/cleanco/home.png',
-        altText: 'Clean Collective packaging',
+        url: '/projects/cleanco/cleanco-website-gallery.webp',
+        altText: 'Clean Collective gallery view',
+      },
+      {
+        url: '/projects/cleanco/cleanco-home.webp',
+        altText: 'Clean Collective homepage',
+      },
+      {
+        url: '/projects/cleanco/cleanco-stack.webp',
+        altText: 'Stack of Clean Collective cans',
       },
     ],
   },
