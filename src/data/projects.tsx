@@ -1,11 +1,19 @@
 export type ProjectItem = {
   id: string
   title: string
-  textVariant?: string
   description: string
+  heroText?: string
+  paragraphs: string[]
   imageUrl: string
+  textVariant?: string
   altText: string
   projectUrl?: string
+  images?: ImageItem[]
+}
+
+type ImageItem = {
+  url: string
+  altText: string
 }
 
 export const projects: ProjectItem[] = [
@@ -13,15 +21,48 @@ export const projects: ProjectItem[] = [
     id: 'rinse-vodka',
     title: 'Rinse',
     description: 'Brand Website',
+    heroText: 'Crafted for purity.',
+    paragraphs: ['test'],
     imageUrl: '/projects/rinsevodka/rinse-product.jpg',
-    altText: 'Rinse Vodka Homepage',
+    altText: 'Rinse Vodka cans',
+    images: [
+      {
+        url: '/projects/rinsevodka/rinse-prod-1.png',
+        altText: 'Rinse Vodka hero image',
+      },
+      {
+        url: '/projects/rinsevodka/rinse-prod-2.png',
+        altText: 'Rinse Vodka bottles',
+      },
+    ],
   },
   {
     id: 'clean-collective',
     title: 'Clean Collective',
-    textVariant: 'dark',
     description: 'Brand Website',
+    heroText:
+      'Clean Collective is a New Zealand beverage brand built for conscious consumers — crafting sugar-free drinks made with natural ingredients and eco-friendly packaging. I developed their public-facing website, creating a performant and maintainable front end using React, Next.js, and SASS.',
+    paragraphs: [
+      'When I joined the company, the brand had strong values and a great product, but no online presence. My role was to design and build a website that embodied those values — one that looked beautiful, performed seamlessly, and could scale as the business grew.',
+      'I led the design and front-end development of the site from the ground up, using React, Next.js, and SASS. Rather than working from an existing mockup, I created a visual language and layout system that reflected Clean Collective’s minimalist aesthetic and commitment to honesty — clean typography, generous white space, and natural imagery. I also collaborated closely with the marketing team to shape the brand’s visual storytelling online, often requesting specific image formats and compositions (“a narrow vertical product shot,” for example) to ensure the photography fit the design and layout harmoniously.',
+      'The browsing experience was built to feel effortless — whether users were learning about the brand’s sustainability story, exploring the product range, or finding where to buy it. One of the most rewarding challenges was developing a custom Google Maps store locator, which dynamically fetched live stockist data, generated pins automatically, and used geolocation to help visitors discover their nearest retailer. This feature quickly became one of the site’s most-used tools.',
+      'As the company expanded, we introduced e-commerce functionality using Stripe, allowing customers to purchase directly from the site. I handled the full setup and integration — from checkout flow to payment capture — ensuring a secure, frictionless buying experience consistent with the brand’s trust-based ethos.',
+      'I also implemented Google Analytics to track user journeys and key conversion points, turning the website from a static marketing page into a measurable, data-informed platform. These insights helped guide future content strategy and product promotion, aligning the website’s performance with real business goals.',
+      'What made this project stand out for me was the interplay between technical precision and brand expression. Every decision — from component structure to typography scale — served the dual purpose of communicating Clean Collective’s ethos and maintaining a high-performance, maintainable codebase.',
+      'The result was a fast, modern, and data-driven brand website that clearly articulated Clean Collective’s identity while remaining adaptable for future growth. It was a project that reinforced how thoughtful front-end development and intentional design can work together to tell a brand’s story with clarity and confidence.',
+    ],
     imageUrl: '/projects/cleanco/cleanco-home.jpg',
-    altText: 'Clean Collective Homepage',
+    textVariant: 'dark',
+    altText: 'Clean Collective cans',
+    images: [
+      {
+        url: '/projects/cleanco/home.png',
+        altText: 'Clean Collective hero image',
+      },
+      {
+        url: '/projects/cleanco/home.png',
+        altText: 'Clean Collective packaging',
+      },
+    ],
   },
 ]

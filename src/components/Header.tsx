@@ -3,7 +3,7 @@ import { Button } from './ui/button'
 
 export default function Header() {
   return (
-    <header className="w-full flex items-center py-4">
+    <header className="w-full max-w-[1200px] mx-auto flex items-center py-5 md:py-10 fixed top-0 left-0 right-0 z-10">
       <Button variant={'ghost'} className="text-3xl font-bold">
         <Link href="/">
           Devon McGrath
