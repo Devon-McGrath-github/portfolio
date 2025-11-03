@@ -6,7 +6,7 @@ export type ProjectItem = {
   paragraphs: string[]
   imageUrl: string
   altText: string
-  textVariant?: string
+  textVariant?: 'dark' // for light backgrounds
   projectUrl?: string
   images?: ImageItem[]
 }
