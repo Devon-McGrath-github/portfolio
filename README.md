@@ -5,6 +5,8 @@ This is the source code for my personal portfolio website.
 
 Built to showcase my projects, experience, and technical work as a frontend developer.
 
+![devonmcgrath.io home page](./assets/site.png)
+
 ## Tech Stack
 
 - **Next.js** (App Router)

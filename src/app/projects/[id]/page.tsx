@@ -41,9 +41,10 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
         {/* Project description paragraphs */}
         <section className="flex flex-col gap-10">
-          <h3 className="text-[1.375rem] md:text-[1.75rem] font-medium md:font-normal leading-[1.4]">
+          {/* Lead paragraph, not a heading: an h3 straight after the h1 skips a heading level */}
+          <p className="text-[1.375rem] md:text-[1.75rem] font-medium md:font-normal leading-[1.4]">
             {project.heroText}
-          </h3>
+          </p>
 
           {project.paragraphs.map((paragraph, index) => (
             <p
@@ -65,8 +66,8 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               alt={image.altText}
               width={1200}
               height={800}
+              sizes="(min-width: 1200px) 1200px, 100vw"
               className="w-full h-auto"
-              priority={index === 0}
             />
           </div>
         ))}

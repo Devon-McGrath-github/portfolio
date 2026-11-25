@@ -1,4 +1,3 @@
-import { headers } from 'next/headers'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
@@ -34,25 +33,11 @@ export const metadata: Metadata = {
   description: `${SITE.description}`,
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const h = await headers()
-
-  // Netlify: x-nf-geo contains JSON with { country, subdivision, city, ... }
-  // Fallbacks: if header missing (local dev), default to showing the banner (safer).
-  let inConsentRegion = true
-  try {
-    const geoRaw = h.get('x-nf-geo') || '{}'
-    const geo = JSON.parse(geoRaw)
-    const cc = (geo?.country || '').toUpperCase()
-    inConsentRegion = CONSENT_REGIONS.includes(cc) || cc === ''
-  } catch {
-    inConsentRegion = true
-  }
-
   return (
     <html lang="en" className={`${sansFont.variable} ${monoFont.variable} ${displayFont.variable}`}>
       <body>
@@ -84,8 +69,8 @@ export default async function RootLayout({
         {/* GA tracking */}
         <GoogleAnalytics />
 
-        {/* Show banner only where required */}
-        {inConsentRegion && <ConsentBanner />}
+        {/* Shows itself only in consent regions (see middleware.ts) */}
+        <ConsentBanner />
 
         {/* Footer */}
         <Footer />

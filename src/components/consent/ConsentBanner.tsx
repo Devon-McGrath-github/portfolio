@@ -3,15 +3,15 @@
 import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { useEffect, useState } from 'react'
-
-const KEY = 'consent.choice.v1' // change if you need to invalidate old choices
+import { ANALYTICS_GRANTED_EVENT, CONSENT_KEY, isInConsentRegion, readStoredConsent } from './consent'
 
 export default function ConsentBanner() {
   const [mounted, setMounted] = useState(false) // renders the banner
   const [shown, setShown] = useState(false) // controls slide-in animation
 
   useEffect(() => {
-    const stored = localStorage.getItem(KEY)
+    if (!isInConsentRegion()) return
+    const stored = readStoredConsent()
     if (!stored) {
       // No previous choice → mount banner, then animate in after a small delay
       setMounted(true) // render
@@ -19,10 +19,7 @@ export default function ConsentBanner() {
       return () => clearTimeout(t)
     }
     // If there is a stored choice, apply it on mount
-    try {
-      const choice = JSON.parse(stored)
-      window.gtag?.('consent', 'update', choice)
-    } catch {}
+    window.gtag?.('consent', 'update', stored)
   }, [])
 
   const slideOutAndUnmount = () => {
@@ -37,7 +34,7 @@ export default function ConsentBanner() {
   //     ad_personalization: 'granted',
   //     analytics_storage: 'granted',
   //   }
-  //   localStorage.setItem(KEY, JSON.stringify(choice))
+  //   localStorage.setItem(CONSENT_KEY, JSON.stringify(choice))
   //   window.gtag?.('consent', 'update', choice)
 
   //   // Optional immediate page_view
@@ -57,7 +54,7 @@ export default function ConsentBanner() {
       ad_personalization: 'denied',
       analytics_storage: 'denied',
     }
-    localStorage.setItem(KEY, JSON.stringify(choice))
+    localStorage.setItem(CONSENT_KEY, JSON.stringify(choice))
     window.gtag?.('consent', 'update', choice)
     slideOutAndUnmount()
   }
@@ -69,15 +66,11 @@ export default function ConsentBanner() {
       ad_personalization: 'denied',
       analytics_storage: 'granted',
     }
-    localStorage.setItem(KEY, JSON.stringify(choice))
+    localStorage.setItem(CONSENT_KEY, JSON.stringify(choice))
     window.gtag?.('consent', 'update', choice)
 
-    // immediate page_view information
-    window.gtag?.('event', 'page_view', {
-      page_title: document.title,
-      page_location: window.location.href,
-      page_path: window.location.pathname + window.location.search,
-    })
+    // Loads GA, whose config call sends this page's page_view
+    window.dispatchEvent(new Event(ANALYTICS_GRANTED_EVENT))
 
     slideOutAndUnmount()
   }
@@ -92,7 +85,7 @@ export default function ConsentBanner() {
       variant="default"
       className={[
         // positioning & look
-        'border-none font-mono fixed inset-x-0 sm:inset-x-auto bottom-2 sm:bottom-[2vw] sm:left-[2vw] z-50 text-white backdrop-blur border-t flex flex-col gap-4 w-[90vw] max-w-sm mx-auto',
+        'border-none bg-neutral-700 font-mono fixed inset-x-0 sm:inset-x-auto bottom-2 sm:bottom-[2vw] sm:left-[2vw] z-50 text-white backdrop-blur border-t flex flex-col gap-4 w-[90vw] max-w-sm mx-auto',
         // animation
         'transition-all duration-500 ease-out',
         // start off-screen then slide up when `shown` is true

@@ -18,7 +18,7 @@ export default function Project({ title, textVariant, description, imageUrl, alt
     >
       <Link href={`${projectUrl}`} className="block relative w-full h-full">
         <ParallaxMedia>
-          <Image src={imageUrl} alt={altText} fill className="object-cover" sizes="100vw" priority />
+          <Image src={imageUrl} alt={altText} fill className="object-cover" sizes="100vw" />
         </ParallaxMedia>
 
         <div
