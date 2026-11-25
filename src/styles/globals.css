@@ -156,16 +156,25 @@
    */
   .parallax-frame {
     view-timeline: --parallax-frame block;
+    /*
+     * Measure the timeline against the small viewport (mobile browser toolbars shown), so its
+     * range doesn't change when the toolbars hide or show. Otherwise the viewport height
+     * changes in one step and the media jumps to a new offset mid-scroll. 100dvh - 100svh is the
+     * height the toolbars have freed up; it's 0 on desktop.
+     */
+    view-timeline-inset: 0 calc(100dvh - 100svh);
   }
 
   /*
-   * The media travels ±45% of the frame height (about the old ±400px on a typical screen), so
-   * it moves at roughly half the page's speed. No overscan is needed: the frame is a full
-   * viewport tall, so whichever edge the media has pulled away from is always off-screen.
+   * The media travels ±45% of its height, so it moves at roughly half the page's speed (keep
+   * the keyframes and the fallback transform in step). The edge it pulls away from is
+   * off-screen, except while mobile toolbars are hidden: the timeline's trimmed bottom edge then
+   * sits above the real one, so a strip at the bottom of the frame could show. Extending the
+   * media down by the toolbars' height (0 on desktop) covers that.
    */
   .parallax-media {
     position: absolute;
-    inset: 0;
+    inset: 0 0 calc(100svh - 100lvh);
     transform: translate3d(0, calc((var(--parallax-progress, 0.5) * 2 - 1) * 45%), 0);
   }
 

@@ -6,7 +6,7 @@ import { projects } from '@/data/projects'
 export default function Home() {
   return (
     <div>
-      <div className="min-h-dvh grid grid-rows-[auto_1fr_auto] w-full">
+      <div className="min-h-svh grid grid-rows-[auto_1fr_auto] w-full">
         {/* Header */}
         <div className="mx-auto max-w-[min(92vw,3200px)] py-6 w-full">
           <HomeHeader />
