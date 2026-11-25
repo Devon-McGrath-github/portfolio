@@ -4,8 +4,6 @@ import Script from 'next/script'
 
 import { SITE } from '@/config/site'
 
-import ParallaxProviders from './providers'
-
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import ConsentBanner from '../components/consent/ConsentBanner'
 import { CONSENT_REGIONS } from '../constants/consentRegions'
@@ -14,6 +12,7 @@ import { CONSENT_REGIONS } from '../constants/consentRegions'
 import 'styles/globals.css'
 import { Geist, Geist_Mono, Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
+import SmoothScroll from '@/components/SmoothScroll'
 
 const sansFont = Geist({
   variable: '--font-geist-sans',
@@ -78,7 +77,9 @@ export default async function RootLayout({
           `}
         </Script>
 
-        <ParallaxProviders>{children}</ParallaxProviders>
+        {children}
+
+        <SmoothScroll />
 
         {/* GA tracking */}
         <GoogleAnalytics />

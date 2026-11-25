@@ -146,6 +146,49 @@
   }
 }
 
+@layer components {
+  /*
+   * Parallax: a .parallax-media child drifts slower than the page while its .parallax-frame
+   * scrolls through the viewport. Driven by a CSS scroll-driven animation so it runs on the
+   * compositor, in sync with every scroll frame (no main-thread scroll handlers to lag
+   * behind mouse-wheel steps). ParallaxMedia.tsx sets --parallax-progress as a fallback
+   * where scroll-driven animations aren't supported.
+   */
+  .parallax-frame {
+    view-timeline: --parallax-frame block;
+  }
+
+  /*
+   * The media travels ±45% of the frame height (about the old ±400px on a typical screen), so
+   * it moves at roughly half the page's speed. No overscan is needed: the frame is a full
+   * viewport tall, so whichever edge the media has pulled away from is always off-screen.
+   */
+  .parallax-media {
+    position: absolute;
+    inset: 0;
+    transform: translate3d(0, calc((var(--parallax-progress, 0.5) * 2 - 1) * 45%), 0);
+  }
+
+  @keyframes parallax-drift {
+    from {
+      transform: translate3d(0, -45%, 0);
+    }
+    to {
+      transform: translate3d(0, 45%, 0);
+    }
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .parallax-media {
+        animation: parallax-drift linear both;
+        /* Must come after the `animation` shorthand, which resets it. */
+        animation-timeline: --parallax-frame;
+      }
+    }
+  }
+}
+
 @layer base {
   /* predictable sizing model */
   *,
